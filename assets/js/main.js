@@ -33,12 +33,12 @@ function readResults() {
     for (let i = 0; i < userNumbers.length; i++) {
       const userNumber = userNumbers[i];
       if (userNumber.innerHTML === rndNumber.innerHTML) {
-        userNumber.classList.add("checked");
         rndNumber.classList.add("checked");
-        ++totalPoints;
       }
     }
   }
+  const checked = document.querySelectorAll(".checked");
+  totalPoints = checked.length;
   setTimeout(FuncAlert, 500);
   function FuncAlert() {
     alert(`Punteggio: ${totalPoints}/5`);
